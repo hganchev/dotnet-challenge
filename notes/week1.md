@@ -107,13 +107,45 @@ Build a solid foundation in the core C# language concepts that underpin all .NET
 - [x] Nullable types
 
 ### ✅ OOP
-- [ ] File exists: `OOP/Program.cs`
-- [ ] Inheritance hierarchy
-- [ ] Abstract class + interface
-- [ ] Polymorphism demo
-- [ ] Encapsulation with access modifiers
+- [x] File exists: `OOP/Program.cs`
+- [x] Inheritance hierarchy
+- [x] Abstract class + interface
+- [x] Polymorphism demo
+- [x] Encapsulation with access modifiers
 
 ### Delegates and Events — see detailed audit below
+
+---
+
+## OOP — Detailed Coverage Audit
+
+| Topic | Covered? | File |
+|---|---|---|
+| Classes: fields, properties, constructors | ✅ | `Encapsulation/BankAccount.cs` |
+| Access modifiers (`private`, `public`, `protected`, `internal`, `init`) | ✅ | `Encapsulation/BankAccount.cs` |
+| Auto-properties, expression-bodied, `init`-only setters | ✅ | `Encapsulation/BankAccount.cs`, `Encapsulation/PersonInfo.cs` |
+| Encapsulation: hide internals, expose minimal API | ✅ | `Encapsulation/BankAccount.cs` |
+| Inheritance + constructor chaining (`base()`) | ✅ | `Inheritance/Animal.cs` |
+| Abstract classes (`abstract` keyword) | ✅ | `Inheritance/Animal.cs` |
+| `virtual` / `override` | ✅ | `Inheritance/Animal.cs`, `Polymorphism/Vehicle.cs` |
+| `sealed` class | ✅ | `Inheritance/Animal.cs` (`GoldenRetriever`) |
+| Interfaces with default methods (C# 8+) | ✅ | `Interfaces/IShape.cs` |
+| Explicit interface implementation | ✅ | `Interfaces/Shapes.cs` (`Rectangle`) |
+| `IEquatable<T>` | ✅ | `Interfaces/Employee.cs` |
+| `IComparable<T>` | ✅ | `Interfaces/Employee.cs` |
+| Method hiding with `new` | ✅ | `Polymorphism/Vehicle.cs` (`SportsCar`) |
+| `is` / `as` / pattern matching | ✅ | `Examples/PolymorphismDemo.cs` |
+| Static class + static utility methods | ✅ | `StaticMembers/AppSettings.cs` (`MathUtils`) |
+| Singleton pattern (thread-safe `Lazy<T>`) | ✅ | `StaticMembers/AppSettings.cs` |
+| Extension methods | ✅ | `StaticMembers/StringExtensions.cs` |
+| Operator overloading (`+`, `-`, `*`, `==`, `!=`) | ✅ | `OperatorOverloading/Vector2D.cs` |
+| Implicit / explicit conversion operators | ✅ | `OperatorOverloading/Vector2D.cs` |
+| Object initializers + `init`-only setters | ✅ | `Examples/InitializersDemo.cs` |
+| Collection initializers + collection expressions (C# 12) | ✅ | `Examples/InitializersDemo.cs` |
+| Target-typed `new` | ✅ | `Examples/InitializersDemo.cs` |
+
+### Gaps to Address
+All gaps resolved. OOP topic is fully covered.
 
 ### ✅ Generics
 - [x] File exists: `Generics/Program.cs`
