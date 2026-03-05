@@ -116,10 +116,33 @@ Build a solid foundation in the core C# language concepts that underpin all .NET
 ### Delegates and Events — see detailed audit below
 
 ### ✅ Generics
-- [ ] File exists: `Generics/Program.cs`
-- [ ] Generic class + method
-- [ ] Constraints
-- [ ] Covariance/contravariance
+- [x] File exists: `Generics/Program.cs`
+- [x] Generic class + method
+- [x] Constraints
+- [x] Covariance/contravariance
+
+---
+
+## Generics — Detailed Coverage Audit
+
+| Topic | Covered? | File |
+|---|---|---|
+| Generic classes | ✅ | `GenericClasses/Foo.cs`, `GenericClasses/GenericPair.cs` |
+| Generic repository pattern | ✅ | `GenericClasses/GenericRepository.cs` |
+| Generic methods + type inference | ✅ | `GenericMethods/GenericMethod.cs`, `GenericMethods/UtilityMethods.cs` |
+| `where T : class` | ✅ | `TypeConstraints/ClassConstraint.cs` |
+| `where T : struct` + `default(T)` | ✅ | `TypeConstraints/StructConstraint.cs` |
+| `where T : new()` | ✅ | `TypeConstraints/NewConstraint.cs` |
+| Interface constraints (`IComparable<T>`) | ✅ | `TypeConstraints/InterfaceConstraint.cs` |
+| Multiple `where` constraints | ✅ | `TypeConstraints/MultipleConstraints.cs` |
+| Covariance (`out T`) | ✅ | `Variance/CovariantInterface.cs` |
+| Contravariance (`in T`) | ✅ | `Variance/ContravariantInterface.cs` |
+| Generic collections (`List<T>`, `Dictionary<K,V>`, `HashSet<T>`) | ✅ | `Examples/GenericCollections.cs` |
+| Generic delegates (`Func<>`, `Action<>`, `Predicate<>`) | ✅ | `Examples/GenericDelegates.cs` |
+| Generic interfaces (`IRepository<T>`, `IEnumerable<T>`) | ✅ | `Examples/GenericInterfaces.cs` |
+
+### Gaps to Address
+All gaps resolved. Generics topic is fully covered.
 
 ---
 
