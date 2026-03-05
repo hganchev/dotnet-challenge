@@ -1,0 +1,40 @@
+@host = http://localhost:5000
+
+###
+# ── Valid request → 200 OK ──────────────────────────────────────────────────
+# net9.0 (FluentValidation path):  run with: dotnet run -f net9.0
+# net10.0 (built-in path):         run with: dotnet run -f net10.0
+POST {{host}}/products
+Content-Type: application/json
+
+{
+  "name": "Laptop Pro",
+  "price": 999.99,
+  "category": "Electronics"
+}
+
+###
+# ── Invalid: empty name, negative price, bad category → 400 ValidationProblem
+POST {{host}}/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": -5,
+  "category": "Gadgets"
+}
+
+###
+# ── Invalid: Electronics priced below 10.00 (cross-field rule) → 400
+POST {{host}}/products
+Content-Type: application/json
+
+{
+  "name": "USB Cable",
+  "price": 1.99,
+  "category": "Electronics"
+}
+
+###
+# ── Health check ─────────────────────────────────────────────────────────────
+GET {{host}}/
