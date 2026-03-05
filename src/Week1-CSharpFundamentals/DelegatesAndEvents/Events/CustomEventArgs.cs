@@ -37,29 +37,3 @@ public class CustomEventSubscriber
         Console.WriteLine($"CustomEvent received: {e.Message}");
     }
 }
-
-// Standard .NET pattern: use the built-in EventHandler<TEventArgs> instead of a custom delegate.
-// This is the idiomatic approach and is consistent with the BCL (Base Class Library).
-public class StandardEventPublisher
-{
-    // EventHandler<TEventArgs> is a built-in delegate: void (object sender, TEventArgs e)
-    public event EventHandler<CustomEventArgs>? StandardEvent;
-
-    public void RaiseStandardEvent(string message)
-    {
-        StandardEvent?.Invoke(this, new CustomEventArgs(message));
-    }
-}
-
-public class StandardEventSubscriber
-{
-    public void Subscribe(StandardEventPublisher publisher)
-    {
-        publisher.StandardEvent += OnStandardEvent;
-    }
-
-    private void OnStandardEvent(object? sender, CustomEventArgs e)
-    {
-        Console.WriteLine($"StandardEvent received: {e.Message}");
-    }
-}

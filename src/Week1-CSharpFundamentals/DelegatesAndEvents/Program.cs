@@ -20,4 +20,4 @@ customEvents.RaiseCustomEvent("Hello, this is a custom event!");
 var standardPublisher = new StandardEventPublisher();
 var standardSubscriber = new StandardEventSubscriber();
 standardSubscriber.Subscribe(standardPublisher);
-standardPublisher.RaiseStandardEvent("Hello, this is a standard event!");
+standardPublisher.RaiseStandardEvent();
