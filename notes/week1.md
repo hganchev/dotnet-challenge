@@ -100,11 +100,11 @@ Build a solid foundation in the core C# language concepts that underpin all .NET
 ## Coverage Audit
 
 ### ✅ Value vs Reference Types
-- [ ] File exists: `ValueVsReference/Program.cs`
-- [ ] Stack/heap demonstration
-- [ ] Boxing/unboxing example
-- [ ] `ref` / `out` / `in` examples
-- [ ] Nullable types
+- [x] File exists: `ValueVsReference/Program.cs`
+- [x] Stack/heap demonstration
+- [x] Boxing/unboxing example
+- [x] `ref` / `out` / `in` examples
+- [x] Nullable types
 
 ### ✅ OOP
 - [ ] File exists: `OOP/Program.cs`
@@ -143,6 +143,40 @@ Build a solid foundation in the core C# language concepts that underpin all .NET
 
 ### Gaps to Address
 All gaps resolved. Generics topic is fully covered.
+
+---
+
+## Value vs Reference Types — Detailed Coverage Audit
+
+| Topic | Covered? | File |
+|---|---|---|
+| Stack/heap + copy vs reference semantics | ✅ | `ValueTypes/ValueTypeBasics.cs`, `ReferenceTypes/ReferenceTypeBasics.cs` |
+| `struct` copy semantics + mutation requires `ref` | ✅ | `ValueTypes/ValueTypeBasics.cs` |
+| `enum` as value type | ✅ | `ValueTypes/ValueTypeBasics.cs` |
+| Class / array / string as reference types | ✅ | `ReferenceTypes/ReferenceTypeBasics.cs` |
+| String interning + value-like `==` | ✅ | `ReferenceTypes/ReferenceTypeBasics.cs` |
+| Implicit boxing | ✅ | `BoxingUnboxing/BoxingUnboxingDemo.cs` |
+| Explicit unboxing + `InvalidCastException` | ✅ | `BoxingUnboxing/BoxingUnboxingDemo.cs` |
+| Boxing via interface assignment | ✅ | `BoxingUnboxing/BoxingUnboxingDemo.cs` |
+| Performance cost — `ArrayList` vs `List<T>` | ✅ | `BoxingUnboxing/BoxingUnboxingDemo.cs` |
+| `ref` parameter | ✅ | `RefOutIn/RefOutInDemo.cs` |
+| `out` parameter + inline declaration + discard `_` | ✅ | `RefOutIn/RefOutInDemo.cs` |
+| `in` parameter (read-only ref for large structs) | ✅ | `RefOutIn/RefOutInDemo.cs` |
+| `int?` / `Nullable<T>` — HasValue, Value, GetValueOrDefault | ✅ | `NullableTypes/NullableTypesDemo.cs` |
+| Null-coalescing `??` and `??=` | ✅ | `NullableTypes/NullableTypesDemo.cs` |
+| Null-conditional `?.` | ✅ | `NullableTypes/NullableTypesDemo.cs` |
+| Lifted arithmetic on nullable types | ✅ | `NullableTypes/NullableTypesDemo.cs` |
+| `==` vs `Equals()` vs `ReferenceEquals()` | ✅ | `EqualitySemantics/EqualitySemanticsDemo.cs` |
+| Struct equality with `IEquatable<T>` | ✅ | `EqualitySemantics/EqualitySemanticsDemo.cs` |
+| `GetHashCode` contract | ✅ | `EqualitySemantics/EqualitySemanticsDemo.cs` |
+| `record class` — value equality, `with`, `ToString` | ✅ | `Records/RecordsDemo.cs` |
+| Positional records + deconstruction | ✅ | `Records/RecordsDemo.cs` |
+| Nominal record + `init`-only setters | ✅ | `Records/RecordsDemo.cs` |
+| Record inheritance + constructor chaining | ✅ | `Records/RecordsDemo.cs` |
+| `record struct` — value type with value equality | ✅ | `Records/RecordsDemo.cs` |
+
+### Gaps to Address
+All gaps resolved. Value vs Reference Types topic is fully covered.
 
 ---
 
