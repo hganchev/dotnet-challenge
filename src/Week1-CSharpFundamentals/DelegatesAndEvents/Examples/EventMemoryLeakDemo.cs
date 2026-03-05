@@ -1,4 +1,4 @@
-namespace DelegatesAndEvents.Events;
+namespace DelegatesAndEvents.Examples;
 
 // Demonstrates event memory leaks.
 // A publisher holds a strong reference to every subscriber via its event backing field.
