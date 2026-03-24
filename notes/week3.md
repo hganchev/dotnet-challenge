@@ -239,26 +239,26 @@ Channels/
 ### Thread Safety
 | Topic | Covered? | File |
 |---|---|---|
-| `lock` + `Monitor` | ⬜ | `ThreadSafety/` – not yet implemented |
-| `Interlocked` operations | ⬜ | `ThreadSafety/` – not yet implemented |
-| `ConcurrentDictionary<K,V>` + `ConcurrentQueue<T>` | ⬜ | `ThreadSafety/` – not yet implemented |
-| `SemaphoreSlim` async throttling | ⬜ | `ThreadSafety/` – not yet implemented |
-| `ReaderWriterLockSlim` | ⬜ | `ThreadSafety/` – not yet implemented |
-| Immutable data sharing | ⬜ | `ThreadSafety/` – not yet implemented |
-| `ThreadLocal<T>` | ⬜ | `ThreadSafety/` – not yet implemented |
+| `lock` + `Monitor` | ✅ | `ThreadSafety/Examples/LockDemo.cs` |
+| `Interlocked` operations | ✅ | `ThreadSafety/Examples/InterlockedDemo.cs` |
+| `ConcurrentDictionary<K,V>` + `ConcurrentQueue<T>` | ✅ | `ThreadSafety/Examples/ConcurrentCollectionsDemo.cs` |
+| `SemaphoreSlim` async throttling | ✅ | `ThreadSafety/Examples/SemaphoreSlimDemo.cs` |
+| `ReaderWriterLockSlim` | ✅ | `ThreadSafety/Examples/ReaderWriterDemo.cs` |
+| Immutable data sharing | ✅ | `ThreadSafety/Examples/ImmutabilityDemo.cs` |
+| `ThreadLocal<T>` | ✅ | `ThreadSafety/Concepts/ThreadLocalDemo.cs` |
 
 ### Channels
 | Topic | Covered? | File |
 |---|---|---|
-| `Channel.CreateBounded<T>` + back-pressure | ⬜ | `Channels/` – not yet implemented |
-| `ChannelWriter<T>` + `Complete()` | ⬜ | `Channels/` – not yet implemented |
-| `ChannelReader<T>` + `ReadAllAsync` | ⬜ | `Channels/` – not yet implemented |
-| `await foreach` drain | ⬜ | `Channels/` – not yet implemented |
-| Multi-producer / multi-consumer | ⬜ | `Channels/` – not yet implemented |
-| Multi-stage pipeline | ⬜ | `Channels/` – not yet implemented |
+| `Channel.CreateBounded<T>` + back-pressure | ✅ | `Channels/Examples/BackPressureDemo.cs` |
+| `ChannelWriter<T>` + `Complete()` | ✅ | `Channels/Examples/ProducerConsumerDemo.cs` |
+| `ChannelReader<T>` + `ReadAllAsync` | ✅ | `Channels/Examples/BasicChannelDemo.cs` |
+| `await foreach` drain | ✅ | `Channels/Examples/BasicChannelDemo.cs` |
+| Multi-producer / multi-consumer | ✅ | `Channels/Examples/MultiProducerConsumerDemo.cs` |
+| Multi-stage pipeline | ✅ | `Channels/Examples/PipelineDemo.cs` |
 
 ### Gaps to Address
 - ~~Implement AsyncAwait project~~ ✅ Done
 - ~~Implement TPL project~~ ✅ Done
-- Implement ThreadSafety project: race condition demo + fix, `Interlocked`, concurrent collections, `SemaphoreSlim`, `ReaderWriterLockSlim`
-- Implement Channels project: bounded channel with back-pressure, producer/consumer, multi-stage pipeline
+- ~~Implement ThreadSafety project: race condition demo + fix, `Interlocked`, concurrent collections, `SemaphoreSlim`, `ReaderWriterLockSlim`~~
+- ~~Implement Channels project: bounded channel with back-pressure, producer/consumer, multi-stage pipeline~~ ✅ Done
