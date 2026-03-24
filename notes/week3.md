@@ -228,13 +228,13 @@ Channels/
 ### TPL
 | Topic | Covered? | File |
 |---|---|---|
-| `Task.Run` | ⬜ | `TPL/` – not yet implemented |
-| `Parallel.For` / `ForEach` + `ParallelOptions` | ⬜ | `TPL/` – not yet implemented |
-| `MaxDegreeOfParallelism` | ⬜ | `TPL/` – not yet implemented |
-| PLINQ `.AsParallel()` | ⬜ | `TPL/` – not yet implemented |
-| `Parallel.Invoke` | ⬜ | `TPL/` – not yet implemented |
-| `TaskCompletionSource<T>` | ⬜ | `TPL/` – not yet implemented |
-| `AggregateException` handling | ⬜ | `TPL/` – not yet implemented |
+| `Task.Run` | ✅ | `TPL/Examples/TaskRunDemo.cs` |
+| `Parallel.For` / `ForEach` + `ParallelOptions` | ✅ | `TPL/Examples/ParallelForDemo.cs` |
+| `MaxDegreeOfParallelism` | ✅ | `TPL/Examples/ParallelForDemo.cs` |
+| PLINQ `.AsParallel()` | ✅ | `TPL/Examples/PlinqDemo.cs` |
+| `Parallel.Invoke` | ✅ | `TPL/Examples/ParallelInvokeDemo.cs` |
+| `TaskCompletionSource<T>` | ✅ | `TPL/Examples/TaskCompletionSourceDemo.cs` |
+| `AggregateException` handling | ✅ | `TPL/Examples/AggregateExceptionDemo.cs` |
 
 ### Thread Safety
 | Topic | Covered? | File |
@@ -259,6 +259,6 @@ Channels/
 
 ### Gaps to Address
 - ~~Implement AsyncAwait project~~ ✅ Done
-- Implement TPL project: `Parallel.ForEach` with `ParallelOptions`, PLINQ, `TaskCompletionSource`, exception aggregation
+- ~~Implement TPL project~~ ✅ Done
 - Implement ThreadSafety project: race condition demo + fix, `Interlocked`, concurrent collections, `SemaphoreSlim`, `ReaderWriterLockSlim`
 - Implement Channels project: bounded channel with back-pressure, producer/consumer, multi-stage pipeline
