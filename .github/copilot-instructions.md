@@ -4,7 +4,7 @@ This is a 10-week guided .NET learning challenge. Each week lives under `src/Wee
 sub-projects per concept. Console demos go in `Program.cs`; supporting types in named sub-folders.
 
 ## Language & Runtime
-- Target **.NET 9** / **C# 13** unless a week explicitly calls for something else.
+- Target **.NET 10** / **C# 14** unless a week explicitly calls for something else.
 - Enable nullable reference types (`<Nullable>enable</Nullable>`) in every project.
 - Use `global using` directives only when they genuinely reduce repetition across multiple files.
 
