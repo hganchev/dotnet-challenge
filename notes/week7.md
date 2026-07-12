@@ -100,22 +100,22 @@ Understand and apply widely-used software design patterns and architectural prin
 ### SOLID
 | Principle | Covered? | File |
 |---|---|---|
-| SRP | ⬜ | `SOLID/` – not yet implemented |
-| OCP | ⬜ | `SOLID/` – not yet implemented |
-| LSP | ⬜ | `SOLID/` – not yet implemented |
-| ISP | ⬜ | `SOLID/` – not yet implemented |
-| DIP | ⬜ | `SOLID/` – not yet implemented |
+| SRP | ✅ | `SOLID/SingleResponsibility/InvoiceExamples.cs` |
+| OCP | ✅ | `SOLID/OpenClosed/ShapeExamples.cs` |
+| LSP | ✅ | `SOLID/LiskovSubstitution/RectangleSquareExamples.cs` |
+| ISP | ✅ | `SOLID/InterfaceSegregation/PrinterExamples.cs` |
+| DIP | ✅ | `SOLID/DependencyInversion/OrderServiceExamples.cs` |
 
 ### Common Patterns
 | Pattern | Covered? | File |
 |---|---|---|
-| Singleton | ⬜ | `CommonPatterns/` – not yet implemented |
-| Factory Method | ⬜ | `CommonPatterns/` – not yet implemented |
-| Builder | ⬜ | `CommonPatterns/` – not yet implemented |
-| Strategy | ⬜ | `CommonPatterns/` – not yet implemented |
-| Observer | ⬜ | `CommonPatterns/` – not yet implemented |
-| Decorator | ⬜ | `CommonPatterns/` – not yet implemented |
-| Repository | ⬜ | `CommonPatterns/` – not yet implemented |
+| Singleton | ✅ | `CommonPatterns/Singleton/AppConfiguration.cs` |
+| Factory Method | ✅ | `CommonPatterns/FactoryMethod/NotificationFactory.cs` |
+| Builder | ✅ | `CommonPatterns/Builder/PizzaBuilder.cs` |
+| Strategy | ✅ | `CommonPatterns/Strategy/PaymentStrategy.cs` |
+| Observer | ✅ | `CommonPatterns/Observer/StockTicker.cs` |
+| Decorator | ✅ | `CommonPatterns/Decorator/BeverageDecorator.cs` |
+| Repository | ✅ | `CommonPatterns/Repository/ProductRepository.cs` |
 | CQRS – `ICommand` / `ICommandHandler<T>` | ✅ | `CommonPatterns/CQRS/Abstractions/ICommand.cs`, `ICommandHandler.cs` |
 | CQRS – `IQuery<TResult>` / `IQueryHandler<TQuery,TResult>` | ✅ | `CommonPatterns/CQRS/Abstractions/IQuery.cs`, `IQueryHandler.cs` |
 | CQRS – `IDispatcher` + `Dispatcher` (generic, no MediatR) | ✅ | `CommonPatterns/CQRS/Abstractions/IDispatcher.cs`, `CQRS/Dispatcher.cs` |
@@ -127,23 +127,22 @@ Understand and apply widely-used software design patterns and architectural prin
 ### Clean Architecture
 | Topic | Covered? | File |
 |---|---|---|
-| Layer separation | ⬜ | `CleanArchitecture/` – not yet implemented |
-| Domain entities | ⬜ | `CleanArchitecture/` – not yet implemented |
-| Use-case classes | ⬜ | `CleanArchitecture/` – not yet implemented |
-| Repository interface (port) | ⬜ | `CleanArchitecture/` – not yet implemented |
-| Infrastructure adapter | ⬜ | `CleanArchitecture/` – not yet implemented |
-| Presentation entry point | ⬜ | `CleanArchitecture/` – not yet implemented |
+| Layer separation | ✅ | `CleanArchitecture/Program.cs` (dependency rule documented) |
+| Domain entities | ✅ | `CleanArchitecture/Domain/Order.cs` |
+| Use-case classes | ✅ | `CleanArchitecture/Application/OrderUseCases.cs` |
+| Repository interface (port) | ✅ | `CleanArchitecture/Application/OrderUseCases.cs` (`IOrderRepository`) |
+| Infrastructure adapter | ✅ | `CleanArchitecture/Infrastructure/InMemoryOrderRepository.cs` |
+| Presentation entry point | ✅ | `CleanArchitecture/Presentation/OrderController.cs`, `Program.cs` |
 
 ### Vertical Slice Architecture
 | Topic | Covered? | File |
 |---|---|---|
 | Project scaffold | ✅ | `VerticalSlices/VerticalSlices.csproj` |
-| Feature folders (request/handler/response per use-case) | ⬜ | `VerticalSlices/` – not yet implemented |
-| Shared kernel / cross-cutting infrastructure | ⬜ | `VerticalSlices/` – not yet implemented |
+| Feature folders (request/handler/response per use-case) | ✅ | `VerticalSlices/Features/CreateOrder/`, `Features/GetOrderById/` |
+| Shared kernel / cross-cutting infrastructure | ✅ | `VerticalSlices/SharedKernel/OrderKernel.cs` |
 
 ### Gaps to Address
-- Implement all five SOLID principles in `SOLID/`
-- Add remaining CommonPatterns: Singleton, Factory, Builder, Strategy, Observer, Decorator, Repository
-- Implement the CleanArchitecture demo with all four layers wired together
-- Implement the VerticalSlices demo with at least two feature folders and a shared kernel
+- None — all Week 7 topics implemented. All four projects (`SOLID`, `CommonPatterns`, `CleanArchitecture`,
+  `VerticalSlices`) migrated to `net10.0` and smoke-tested via `dotnet run`.
+
 
