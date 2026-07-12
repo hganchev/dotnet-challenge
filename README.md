@@ -1,6 +1,6 @@
 # .NET Challenge
 
-An 8-week deep-dive into .NET and C# covering fundamentals, runtime internals, concurrency, data access, web APIs, design patterns, and testing.
+A 10-week deep-dive into .NET and C# covering fundamentals, runtime internals, concurrency, data access, web APIs, design patterns, testing, and system design.
 
 ## Structure
 
@@ -38,12 +38,24 @@ src/
 │   ├── SOLID/                  # Console — SOLID principles with examples
 │   ├── CommonPatterns/         # Console — Factory, Strategy, Observer, etc.
 │   └── CleanArchitecture/      # Console — layered architecture demo
-└── Week8-TestingAndPerformance/
-    ├── UnitTests/              # xUnit — unit testing with mocks
-    ├── IntegrationTests/       # xUnit — WebApplicationFactory, TestServer
-    └── Benchmarks/             # Console — BenchmarkDotNet micro-benchmarks
+├── Week8-TestingAndPerformance/
+│   ├── UnitTests/              # xUnit — unit testing with mocks
+│   ├── IntegrationTests/       # xUnit — WebApplicationFactory, TestServer
+│   └── Benchmarks/             # Console — BenchmarkDotNet micro-benchmarks
+├── Week9-SystemDesign/
+│   ├── ScalabilityAndCaching/              # Console — load balancing, IMemoryCache/IDistributedCache
+│   ├── MessagingAndEventDrivenArchitecture/ # Console — pub/sub, outbox pattern, event sourcing basics
+│   ├── ResilienceAndRateLimiting/           # Console — Polly retry/circuit-breaker, rate limiters
+│   └── ObservabilityAndTracing/             # Web API — Serilog, OpenTelemetry, health checks
+└── Week10-AdvancedSystemDesign/
+    ├── DistributedDataAndConsistency/       # Console — CAP theorem, sharding, consensus basics
+    ├── ApiGatewayAndServiceCommunication/   # Console — REST vs gRPC, API gateway, service discovery
+    ├── DatabaseDesignAndReplication/        # Console — SQL vs NoSQL, indexing, replication, consistent hashing
+    ├── SecurityAtScale/                     # Console — cross-service auth, encryption, secrets management
+    ├── RealTimeAndStreamProcessing/         # Console — WebSockets/SSE, batch vs stream processing
+    └── CapstoneAdvancedSystemDesign/        # Design doc + partial impl — end-to-end case study
 notes/
-├── week1.md  …  week8.md      # Study notes per week
+├── week1.md  …  week10.md      # Study notes per week
 ```
 
 ## Getting Started

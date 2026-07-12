@@ -76,6 +76,25 @@ Understand and apply widely-used software design patterns and architectural prin
 
 ---
 
+## 4. Vertical Slice Architecture
+
+### Topics to Cover
+| Concept | Key Points |
+|---|---|
+| Feature folder | Each use-case (e.g. `CreateOrder`, `GetOrderById`) owns its own request, handler, and response in one folder/file |
+| Vertical vs. horizontal slicing | Slice by feature, not by technical layer (no separate `Controllers/`, `Services/`, `Repositories/` for every feature) |
+| Coupling | Minimize coupling *between* slices; a change to one feature should not ripple into unrelated features |
+| Shared kernel | Cross-cutting concerns (validation pipeline, logging, persistence infrastructure) live in a small shared module referenced by every slice |
+| Relationship to CQRS | Each slice is typically a single command or query + handler, so CQRS and Vertical Slice Architecture compose naturally |
+
+### Expected Outcomes
+- Explain why Vertical Slice Architecture reduces the "shotgun surgery" problem common in layered architectures
+- Implement at least two feature slices (one command, one query) as fully self-contained folders
+- Identify what belongs in a shared kernel versus what should stay duplicated per-slice
+- Compare Vertical Slice Architecture with Clean Architecture and describe when to prefer each
+
+---
+
 ## Coverage Audit
 
 ### SOLID
@@ -115,8 +134,16 @@ Understand and apply widely-used software design patterns and architectural prin
 | Infrastructure adapter | ⬜ | `CleanArchitecture/` – not yet implemented |
 | Presentation entry point | ⬜ | `CleanArchitecture/` – not yet implemented |
 
+### Vertical Slice Architecture
+| Topic | Covered? | File |
+|---|---|---|
+| Project scaffold | ✅ | `VerticalSlices/VerticalSlices.csproj` |
+| Feature folders (request/handler/response per use-case) | ⬜ | `VerticalSlices/` – not yet implemented |
+| Shared kernel / cross-cutting infrastructure | ⬜ | `VerticalSlices/` – not yet implemented |
+
 ### Gaps to Address
 - Implement all five SOLID principles in `SOLID/`
 - Add remaining CommonPatterns: Singleton, Factory, Builder, Strategy, Observer, Decorator, Repository
 - Implement the CleanArchitecture demo with all four layers wired together
+- Implement the VerticalSlices demo with at least two feature folders and a shared kernel
 

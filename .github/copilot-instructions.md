@@ -1,6 +1,6 @@
 # DotNet Challenge — Global Copilot Instructions
 
-This is an 8-week guided .NET learning challenge. Each week lives under `src/WeekN-<Topic>/` with
+This is a 10-week guided .NET learning challenge. Each week lives under `src/WeekN-<Topic>/` with
 sub-projects per concept. Console demos go in `Program.cs`; supporting types in named sub-folders.
 
 ## Language & Runtime
@@ -41,3 +41,5 @@ sub-projects per concept. Console demos go in `Program.cs`; supporting types in 
 | 6 | `Week6-EFCore` | Fundamentals, Query optimisation, Relationships |
 | 7 | `Week7-DesignPatterns` | SOLID, Common patterns, Clean Architecture |
 | 8 | `Week8-TestingAndPerformance` | Unit tests, Integration tests, Benchmarks |
+| 9 | `Week9-SystemDesign` | Scalability/Caching, Messaging, Resilience/Rate limiting, Observability |
+| 10 | `Week10-AdvancedSystemDesign` | Distributed data/Consensus, API gateway, Database replication, Security at scale, Real-time/Stream processing, Capstone |
