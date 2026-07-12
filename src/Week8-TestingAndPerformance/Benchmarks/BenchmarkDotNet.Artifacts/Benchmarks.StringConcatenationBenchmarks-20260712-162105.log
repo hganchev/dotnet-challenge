@@ -1,0 +1,339 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 6 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="/home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/" /p:OutDir="/home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0/" /p:OutputPath="/home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0/" /p:PublishDir="/home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/publish/" in /home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1
+// command took 0.98 sec and exited with 0
+// start dotnet  build -c Release --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="/home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/" /p:OutDir="/home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0/" /p:OutputPath="/home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0/" /p:PublishDir="/home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/publish/" --output "/home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0/" in /home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1
+// command took 6.89 sec and exited with 0
+// ***** Done, took 00:00:07 (7.92 sec)   *****
+// Found 6 benchmarks:
+//   StringConcatenationBenchmarks.StringConcatenation: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=100]
+//   StringConcatenationBenchmarks.StringBuilderAppend: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=100]
+//   StringConcatenationBenchmarks.StringConcatenation: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=1000]
+//   StringConcatenationBenchmarks.StringBuilderAppend: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=1000]
+//   StringConcatenationBenchmarks.StringConcatenation: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=10000]
+//   StringConcatenationBenchmarks.StringBuilderAppend: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=10000]
+
+// **************************
+// Benchmark: StringConcatenationBenchmarks.StringConcatenation: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=100]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Benchmarks-Dry-1.dll --anonymousPipes 128 129 --benchmarkName "Benchmarks.StringConcatenationBenchmarks.StringConcatenation(Iterations: 100)" --job Dry --benchmarkId 0 in /home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1)
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 253509.00 ns, 253.5090 us/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 253509.00 ns, 253.5090 us/op
+// GC:  0 0 0 12576 1
+// Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 1751381 has exited with code 0.
+
+Mean = 253.509 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 253.509 μs, Q1 = 253.509 μs, Median = 253.509 μs, Q3 = 253.509 μs, Max = 253.509 μs
+IQR = 0.000 μs, LowerFence = 253.509 μs, UpperFence = 253.509 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ** Remained 5 (83.3%) benchmark(s) to run. Estimated finish 2026-07-12 16:21 (0h 0m from now) **
+// **************************
+// Benchmark: StringConcatenationBenchmarks.StringBuilderAppend: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=100]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Benchmarks-Dry-1.dll --anonymousPipes 128 129 --benchmarkName "Benchmarks.StringConcatenationBenchmarks.StringBuilderAppend(Iterations: 100)" --job Dry --benchmarkId 1 in /home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1)
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 337915.00 ns, 337.9150 us/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 337915.00 ns, 337.9150 us/op
+// GC:  0 0 0 768 1
+// Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 1751393 has exited with code 0.
+
+Mean = 337.915 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 337.915 μs, Q1 = 337.915 μs, Median = 337.915 μs, Q3 = 337.915 μs, Max = 337.915 μs
+IQR = 0.000 μs, LowerFence = 337.915 μs, UpperFence = 337.915 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ** Remained 4 (66.7%) benchmark(s) to run. Estimated finish 2026-07-12 16:21 (0h 0m from now) **
+// **************************
+// Benchmark: StringConcatenationBenchmarks.StringConcatenation: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Benchmarks-Dry-1.dll --anonymousPipes 128 129 --benchmarkName "Benchmarks.StringConcatenationBenchmarks.StringConcatenation(Iterations: 1000)" --job Dry --benchmarkId 2 in /home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1)
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 604063.00 ns, 604.0630 us/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 604063.00 ns, 604.0630 us/op
+// GC:  0 0 0 1025976 1
+// Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 1751402 has exited with code 0.
+
+Mean = 604.063 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 604.063 μs, Q1 = 604.063 μs, Median = 604.063 μs, Q3 = 604.063 μs, Max = 604.063 μs
+IQR = 0.000 μs, LowerFence = 604.063 μs, UpperFence = 604.063 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ** Remained 3 (50.0%) benchmark(s) to run. Estimated finish 2026-07-12 16:21 (0h 0m from now) **
+// **************************
+// Benchmark: StringConcatenationBenchmarks.StringBuilderAppend: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Benchmarks-Dry-1.dll --anonymousPipes 128 129 --benchmarkName "Benchmarks.StringConcatenationBenchmarks.StringBuilderAppend(Iterations: 1000)" --job Dry --benchmarkId 3 in /home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1)
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 323033.00 ns, 323.0330 us/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 323033.00 ns, 323.0330 us/op
+// GC:  0 0 0 4576 1
+// Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 1751413 has exited with code 0.
+
+Mean = 323.033 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 323.033 μs, Q1 = 323.033 μs, Median = 323.033 μs, Q3 = 323.033 μs, Max = 323.033 μs
+IQR = 0.000 μs, LowerFence = 323.033 μs, UpperFence = 323.033 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ** Remained 2 (33.3%) benchmark(s) to run. Estimated finish 2026-07-12 16:21 (0h 0m from now) **
+// **************************
+// Benchmark: StringConcatenationBenchmarks.StringConcatenation: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Benchmarks-Dry-1.dll --anonymousPipes 128 129 --benchmarkName "Benchmarks.StringConcatenationBenchmarks.StringConcatenation(Iterations: 10000)" --job Dry --benchmarkId 4 in /home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1)
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 8721327.00 ns, 8.7213 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 8721327.00 ns, 8.7213 ms/op
+// GC:  7 0 0 100259976 1
+// Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 1751422 has exited with code 0.
+
+Mean = 8.721 ms, StdErr = 0.000 ms (0.00%), N = 1, StdDev = 0.000 ms
+Min = 8.721 ms, Q1 = 8.721 ms, Median = 8.721 ms, Q3 = 8.721 ms, Max = 8.721 ms
+IQR = 0.000 ms, LowerFence = 8.721 ms, UpperFence = 8.721 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ** Remained 1 (16.7%) benchmark(s) to run. Estimated finish 2026-07-12 16:21 (0h 0m from now) **
+// **************************
+// Benchmark: StringConcatenationBenchmarks.StringBuilderAppend: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Benchmarks-Dry-1.dll --anonymousPipes 128 129 --benchmarkName "Benchmarks.StringConcatenationBenchmarks.StringBuilderAppend(Iterations: 10000)" --job Dry --benchmarkId 5 in /home/hganchev/Projects/GitHub/dotnet-challenge/src/Week8-TestingAndPerformance/Benchmarks/bin/Release/net10.0/Benchmarks-Dry-1/bin/Release/net10.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1)
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 692092.00 ns, 692.0920 us/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 692092.00 ns, 692.0920 us/op
+// GC:  0 0 0 53200 1
+// Threading:  0 0 1
+
+// AfterAll
+// Benchmark Process 1751458 has exited with code 0.
+
+Mean = 692.092 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 692.092 μs, Q1 = 692.092 μs, Median = 692.092 μs, Q3 = 692.092 μs, Max = 692.092 μs
+IQR = 0.000 μs, LowerFence = 692.092 μs, UpperFence = 692.092 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-07-12 16:21 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/Benchmarks.StringConcatenationBenchmarks-report.csv
+  BenchmarkDotNet.Artifacts/results/Benchmarks.StringConcatenationBenchmarks-report-github.md
+  BenchmarkDotNet.Artifacts/results/Benchmarks.StringConcatenationBenchmarks-report.html
+
+// * Detailed results *
+StringConcatenationBenchmarks.StringConcatenation: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=100]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 253.509 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 253.509 μs, Q1 = 253.509 μs, Median = 253.509 μs, Q3 = 253.509 μs, Max = 253.509 μs
+IQR = 0.000 μs, LowerFence = 253.509 μs, UpperFence = 253.509 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[253.508 μs ; 253.510 μs) | @
+---------------------------------------------------
+
+StringConcatenationBenchmarks.StringBuilderAppend: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=100]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 337.915 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 337.915 μs, Q1 = 337.915 μs, Median = 337.915 μs, Q3 = 337.915 μs, Max = 337.915 μs
+IQR = 0.000 μs, LowerFence = 337.915 μs, UpperFence = 337.915 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[337.914 μs ; 337.916 μs) | @
+---------------------------------------------------
+
+StringConcatenationBenchmarks.StringConcatenation: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=1000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 604.063 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 604.063 μs, Q1 = 604.063 μs, Median = 604.063 μs, Q3 = 604.063 μs, Max = 604.063 μs
+IQR = 0.000 μs, LowerFence = 604.063 μs, UpperFence = 604.063 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[604.062 μs ; 604.063 μs) | @
+---------------------------------------------------
+
+StringConcatenationBenchmarks.StringBuilderAppend: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=1000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 323.033 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 323.033 μs, Q1 = 323.033 μs, Median = 323.033 μs, Q3 = 323.033 μs, Max = 323.033 μs
+IQR = 0.000 μs, LowerFence = 323.033 μs, UpperFence = 323.033 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[323.033 μs ; 323.034 μs) | @
+---------------------------------------------------
+
+StringConcatenationBenchmarks.StringConcatenation: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=10000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 8.721 ms, StdErr = 0.000 ms (0.00%), N = 1, StdDev = 0.000 ms
+Min = 8.721 ms, Q1 = 8.721 ms, Median = 8.721 ms, Q3 = 8.721 ms, Max = 8.721 ms
+IQR = 0.000 ms, LowerFence = 8.721 ms, UpperFence = 8.721 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[8.721 ms ; 8.721 ms) | @
+---------------------------------------------------
+
+StringConcatenationBenchmarks.StringBuilderAppend: Dry(IterationCount=1, LaunchCount=1, RunStrategy=ColdStart, UnrollFactor=1, WarmupCount=1) [Iterations=10000]
+Runtime = .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 692.092 μs, StdErr = 0.000 μs (0.00%), N = 1, StdDev = 0.000 μs
+Min = 692.092 μs, Q1 = 692.092 μs, Median = 692.092 μs, Q3 = 692.092 μs, Max = 692.092 μs
+IQR = 0.000 μs, LowerFence = 692.092 μs, UpperFence = 692.092 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[692.091 μs ; 692.092 μs) | @
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.15.8, Linux Ubuntu 24.04.4 LTS (Noble Numbat)
+Intel Core Ultra 9 185H 0.40GHz, 1 CPU, 22 logical and 16 physical cores
+.NET SDK 10.0.109
+  [Host] : .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+  Dry    : .NET 10.0.9 (10.0.9, 10.0.926.27113), X64 RyuJIT x86-64-v3
+
+Job=Dry  IterationCount=1  LaunchCount=1  
+RunStrategy=ColdStart  UnrollFactor=1  WarmupCount=1  
+
+| Method              | Iterations | Mean       | Error | Ratio | Gen0      | Allocated   | Alloc Ratio |
+|-------------------- |----------- |-----------:|------:|------:|----------:|------------:|------------:|
+| StringConcatenation | 100        |   253.5 μs |    NA |  1.00 |         - |     12576 B |        1.00 |
+| StringBuilderAppend | 100        |   337.9 μs |    NA |  1.33 |         - |       768 B |        0.06 |
+|                     |            |            |       |       |           |             |             |
+| StringConcatenation | 1000       |   604.1 μs |    NA |  1.00 |         - |   1025976 B |       1.000 |
+| StringBuilderAppend | 1000       |   323.0 μs |    NA |  0.53 |         - |      4576 B |       0.004 |
+|                     |            |            |       |       |           |             |             |
+| StringConcatenation | 10000      | 8,721.3 μs |    NA |  1.00 | 7000.0000 | 100259976 B |       1.000 |
+| StringBuilderAppend | 10000      |   692.1 μs |    NA |  0.08 |         - |     53200 B |       0.001 |
+
+// * Warnings *
+MinIterationTime
+  StringConcatenationBenchmarks.StringConcatenation: Dry -> The minimum observed iteration time is 253.509μs which is very small. It's recommended to increase it to at least 100ms using more operations.
+  StringConcatenationBenchmarks.StringBuilderAppend: Dry -> The minimum observed iteration time is 337.915μs which is very small. It's recommended to increase it to at least 100ms using more operations.
+  StringConcatenationBenchmarks.StringConcatenation: Dry -> The minimum observed iteration time is 604.063μs which is very small. It's recommended to increase it to at least 100ms using more operations.
+  StringConcatenationBenchmarks.StringBuilderAppend: Dry -> The minimum observed iteration time is 323.033μs which is very small. It's recommended to increase it to at least 100ms using more operations.
+  StringConcatenationBenchmarks.StringConcatenation: Dry -> The minimum observed iteration time is 8.721ms which is very small. It's recommended to increase it to at least 100ms using more operations.
+  StringConcatenationBenchmarks.StringBuilderAppend: Dry -> The minimum observed iteration time is 692.092μs which is very small. It's recommended to increase it to at least 100ms using more operations.
+
+// * Legends *
+  Iterations  : Value of the 'Iterations' parameter
+  Mean        : Arithmetic mean of all measurements
+  Error       : Half of 99.9% confidence interval
+  Ratio       : Mean of the ratio distribution ([Current]/[Baseline])
+  Gen0        : GC Generation 0 collects per 1000 operations
+  Allocated   : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  Alloc Ratio : Allocated memory ratio distribution ([Current]/[Baseline])
+  1 μs        : 1 Microsecond (0.000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:00 (0.72 sec), executed benchmarks: 6
+
+Global total time: 00:00:08 (8.73 sec), executed benchmarks: 6
+// * Artifacts cleanup *
+Artifacts cleanup is finished
