@@ -1,6 +1,26 @@
 @DependencyInjection_HostAddress = http://localhost:5035
 
-GET {{DependencyInjection_HostAddress}}/weatherforecast/
+GET {{DependencyInjection_HostAddress}}/lifetimes
+Accept: application/json
+
+###
+
+GET {{DependencyInjection_HostAddress}}/captive-dependency
+Accept: application/json
+
+###
+
+GET {{DependencyInjection_HostAddress}}/options
+Accept: application/json
+
+###
+
+GET {{DependencyInjection_HostAddress}}/greet/en
+Accept: application/json
+
+###
+
+GET {{DependencyInjection_HostAddress}}/greet/bg
 Accept: application/json
 
 ###

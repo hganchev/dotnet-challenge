@@ -1,6 +1,40 @@
 @Auth_HostAddress = http://localhost:5087
 
-GET {{Auth_HostAddress}}/weatherforecast/
+### 1) Login as Admin (also try alice/alice123 or teen/teen123)
+# @name login
+POST {{Auth_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+###
+
+# 2) Read claims from the token (requires Authorization header — paste the accessToken from step 1)
+GET {{Auth_HostAddress}}/me
+Authorization: Bearer {{login.response.body.accessToken}}
+Accept: application/json
+
+###
+
+# 3) AdminOnly policy — succeeds for admin, 403 for alice/teen
+GET {{Auth_HostAddress}}/admin/secret
+Authorization: Bearer {{login.response.body.accessToken}}
+Accept: application/json
+
+###
+
+# 4) AdultsOnly policy (age >= 18) — succeeds for admin/alice, 403 for teen
+GET {{Auth_HostAddress}}/adult/content
+Authorization: Bearer {{login.response.body.accessToken}}
+Accept: application/json
+
+###
+
+# 5) No token → 401 Unauthorized
+GET {{Auth_HostAddress}}/me
 Accept: application/json
 
 ###

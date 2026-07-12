@@ -1,12 +1,19 @@
+using MinimalApis.Endpoints;
+using MinimalApis.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>();
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
+
+app.MapProductEndpoints();
 
 var summaries = new[]
 {
@@ -24,7 +31,20 @@ app.MapGet("/weatherforecast", () =>
         ))
         .ToArray();
     return forecast;
-});
+}).WithName("GetWeatherForecast").WithTags("WeatherForecast");
+
+Console.WriteLine("""
+
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  Week 5 — Minimal APIs CRUD demo                                  ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  GET    /products         → list all                             ║
+  ║  GET    /products/{id}    → get one (TypedResults Ok/NotFound)    ║
+  ║  POST   /products         → create (Results.Created)              ║
+  ║  PUT    /products/{id}    → update (NoContent/NotFound)           ║
+  ║  DELETE /products/{id}    → delete (NoContent/NotFound)            ║
+  ╚══════════════════════════════════════════════════════════════════╝
+""");
 
 app.Run();
 
@@ -32,3 +52,4 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+

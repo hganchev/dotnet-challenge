@@ -127,30 +127,34 @@ Understand the core building blocks of an ASP.NET Core web application: how requ
 ### Middleware
 | Topic | Covered? | File |
 |---|---|---|
-| Custom middleware pipeline | ⬜ | `Middleware/` – not yet implemented |
-| Short-circuiting | ⬜ | `Middleware/` – not yet implemented |
-| Exception handler | ⬜ | `Middleware/` – not yet implemented |
+| Custom middleware pipeline | ✅ | `Middleware/Middlewares/RequestDurationMiddleware.cs` |
+| Short-circuiting | ✅ | `Middleware/Middlewares/MaintenanceModeMiddleware.cs` |
+| Exception handler | ✅ | `Middleware/Program.cs` (`UseExceptionHandler`) |
+| `Use` vs `Run` vs `Map` | ✅ | `Middleware/Program.cs` (`/branch` route) |
 
 ### Dependency Injection
 | Topic | Covered? | File |
 |---|---|---|
-| Service lifetimes demo | ⬜ | `DependencyInjection/` – not yet implemented |
-| `IOptions<T>` | ⬜ | `DependencyInjection/` – not yet implemented |
-| Registration extension methods | ⬜ | `DependencyInjection/` – not yet implemented |
+| Service lifetimes demo | ✅ | `DependencyInjection/Services/*Service.cs`, `Program.cs` (`/lifetimes`) |
+| Captive dependency bug + fix | ✅ | `DependencyInjection/Services/CaptiveDependencyServices.cs` |
+| `IOptions<T>` / `IOptionsSnapshot<T>` | ✅ | `DependencyInjection/Options/MyFeatureOptions.cs`, `Program.cs` (`/options`) |
+| Registration extension methods | ✅ | `DependencyInjection/Extensions/ServiceCollectionExtensions.cs` |
+| Keyed services | ✅ | `DependencyInjection/Services/Greeters.cs`, `Program.cs` (`/greet/{language}`) |
 
 ### Minimal APIs
 | Topic | Covered? | File |
 |---|---|---|
-| Route handlers + groups | ⬜ | `MinimalApis/` – not yet implemented |
-| `TypedResults` | ⬜ | `MinimalApis/` – not yet implemented |
-| `IEndpointFilter` | ✅ | `Validation/Filters/ValidationFilter.FV.cs` |
+| Route handlers + `MapGroup` | ✅ | `MinimalApis/Endpoints/ProductEndpoints.cs` |
+| `TypedResults` | ✅ | `MinimalApis/Endpoints/ProductEndpoints.cs` |
+| `IEndpointFilter` | ✅ | `Validation/Filters/ValidationFilter.FV.cs`, `MinimalApis/Filters/LoggingEndpointFilter.cs` |
+| Full CRUD + parameter binding | ✅ | `MinimalApis/Endpoints/ProductEndpoints.cs`, `MinimalApis/Repositories/ProductRepository.cs` |
 
 ### Authentication & Authorization
 | Topic | Covered? | File |
 |---|---|---|
-| JWT validation setup | ⬜ | `Auth/` – not yet implemented |
-| Named authorization policies | ⬜ | `Auth/` – not yet implemented |
-| Claims-based identity | ⬜ | `Auth/` – not yet implemented |
+| JWT validation setup | ✅ | `Auth/Program.cs` (`AddJwtBearer`), `Auth/Services/TokenService.cs` |
+| Named authorization policies | ✅ | `Auth/Program.cs` (`AdminOnly`, `AdultsOnly`) |
+| Claims-based identity | ✅ | `Auth/Program.cs` (`/me`), `Auth/Services/TokenService.cs` |
 
 ### Validation
 | Topic | Covered? | File |
@@ -163,7 +167,4 @@ Understand the core building blocks of an ASP.NET Core web application: how requ
 | Side-by-side `Program.cs` | ✅ | `Validation/Program.cs` |
 
 ### Gaps to Address
-- Implement Middleware project: request-duration logger, exception handler, short-circuit example
-- Implement DependencyInjection project: demonstrate all three lifetimes, `IOptions<T>`, extension methods
-- Implement MinimalApis project: full CRUD, `MapGroup`, `TypedResults`, `.WithOpenApi()`
-- Implement Auth project: JWT issue + validate, named policies, claims
+- None — all five Week 5 sub-projects (Middleware, DependencyInjection, MinimalApis, Auth, Validation) are implemented and smoke-tested.

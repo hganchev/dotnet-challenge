@@ -1,6 +1,40 @@
 @MinimalApis_HostAddress = http://localhost:5039
 
-GET {{MinimalApis_HostAddress}}/weatherforecast/
+GET {{MinimalApis_HostAddress}}/products
 Accept: application/json
+
+###
+
+GET {{MinimalApis_HostAddress}}/products/1
+Accept: application/json
+
+###
+
+GET {{MinimalApis_HostAddress}}/products/999
+Accept: application/json
+
+###
+
+POST {{MinimalApis_HostAddress}}/products
+Content-Type: application/json
+
+{
+  "name": "USB-C Hub",
+  "price": 39.99
+}
+
+###
+
+PUT {{MinimalApis_HostAddress}}/products/1
+Content-Type: application/json
+
+{
+  "name": "Laptop Pro",
+  "price": 1399.99
+}
+
+###
+
+DELETE {{MinimalApis_HostAddress}}/products/2
 
 ###

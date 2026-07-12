@@ -4,3 +4,22 @@ GET {{Middleware_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+# Exception-handling middleware demo → 500 with a JSON problem body
+GET {{Middleware_HostAddress}}/throw?message=Boom
+Accept: application/json
+
+###
+
+# Map + Run terminal branch — never reaches the endpoints below
+GET {{Middleware_HostAddress}}/branch
+Accept: text/plain
+
+###
+
+# Short-circuiting middleware demo → 503, never reaches routing/endpoints
+GET {{Middleware_HostAddress}}/weatherforecast
+X-Maintenance: true
+Accept: application/json
+
+###
