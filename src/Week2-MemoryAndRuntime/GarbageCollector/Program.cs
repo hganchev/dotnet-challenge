@@ -17,3 +17,6 @@ LargeObjectHeapDemo.Run();
 // --- GC.KeepAlive: preventing premature collection ---
 KeepAliveDemo.Run();
 
+// --- WeakReference<T>: caches that don't extend an object's lifetime ---
+WeakReferenceDemo.Run();
+

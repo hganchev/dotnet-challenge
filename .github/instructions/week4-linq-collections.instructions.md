@@ -9,6 +9,8 @@ applyTo: "src/Week4-LinqAndCollections/**"
 - Avoid multiple enumeration of the same `IEnumerable<T>` — enumerate once and store the result.
 - Use `IQueryable<T>` (e.g., EF Core) when the query must be translated to SQL; use `IEnumerable<T>` for in-memory processing.
 - Understand the difference between `expression trees` (IQueryable) and `delegates` (IEnumerable) for filtering.
+- Implement custom sequences with `yield return` iterator methods rather than hand-writing `IEnumerator<T>`.
+- Prefer `GroupBy`, `Join`, `Except`, `Intersect`, `Union` for set/relational-style operations instead of nested loops.
 
 ## Collection Choice
 - Use `List<T>` for ordered, index-accessible, mutable sequences.
@@ -17,6 +19,7 @@ applyTo: "src/Week4-LinqAndCollections/**"
 - Use `Queue<T>` / `Stack<T>` for FIFO / LIFO semantics; use `LinkedList<T>` only when frequent mid-list insertion/removal is needed.
 - Use `ImmutableArray<T>` / `ImmutableDictionary<K,V>` when sharing read-only collections across threads.
 - Initialise collections with a capacity hint when the size is known to avoid repeated internal resizing.
+- Provide a custom `IEqualityComparer<T>` / `IComparer<T>` when default equality/ordering doesn't match domain semantics (e.g. case-insensitive keys).
 
 ## LINQ Performance
 - Prefer `Any()` over `Count() > 0` — `Any()` short-circuits after the first element.

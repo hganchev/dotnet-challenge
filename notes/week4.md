@@ -187,6 +187,8 @@ LinqPerformance/
 - `yield return` in a method makes it an iterator — returns an enumerator on-demand, allocates minimally.
 - Streaming operators (`Select`, `Where`) yield one item at a time; materialising operators (`ToList`, `Count`) force full evaluation.
 - Query syntax (`from x in coll select y`) and method syntax (`coll.Select(y)`) compile identically; choose for readability.
+- `GroupBy`, `Join`, `Except`, `Intersect`, `Union` express relational/set-style operations declaratively instead of nested loops — see `LinqInternals/Examples/SetAndJoinOperatorsExample.cs`.
+- A custom `IEqualityComparer<T>` / `IComparer<T>` lets `HashSet<T>`/`Dictionary<K,V>`/`Sort`/`OrderBy` use domain-specific equality/ordering (e.g. case-insensitive keys, sort by length-then-alphabetical) — see `LinqInternals/Examples/CustomComparerExample.cs`.
 
 ### Collections
 - Use `List<T>` for ordered, random-access collections; resizing is O(1) amortised.

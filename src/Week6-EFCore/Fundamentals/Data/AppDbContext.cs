@@ -12,6 +12,7 @@ public class AppDbContext : DbContext
 {
     public DbSet<Author> Authors => Set<Author>();
     public DbSet<Book> Books => Set<Book>();
+    public DbSet<Genre> Genres => Set<Genre>();
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
@@ -35,6 +36,29 @@ public class AppDbContext : DbContext
                 .WithMany(a => a.Books)
                 .HasForeignKey(b => b.AuthorId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // Optimistic-concurrency token: EF Core includes Version in the
+            // WHERE clause of generated UPDATE/DELETE statements. SQLite has no
+            // database-generated rowversion, so the app increments it manually.
+            book.Property(b => b.Version).IsConcurrencyToken();
+
+            book.HasOne(b => b.Genre)
+                .WithMany()
+                .HasForeignKey(b => b.GenreId)
+                .OnDelete(DeleteBehavior.SetNull);
+        });
+
+        // Static lookup data seeded once, at migration-build time — not with
+        // ad-hoc runtime inserts (see MigrationsDemo for the anti-pattern this avoids).
+        modelBuilder.Entity<Genre>(genre =>
+        {
+            genre.ToTable("Genres");
+            genre.HasKey(g => g.Id);
+            genre.Property(g => g.Name).IsRequired().HasMaxLength(50);
+            genre.HasData(
+                new Genre { Id = 1, Name = "Non-Fiction" },
+                new Genre { Id = 2, Name = "Science Fiction" },
+                new Genre { Id = 3, Name = "Biography" });
         });
     }
 }

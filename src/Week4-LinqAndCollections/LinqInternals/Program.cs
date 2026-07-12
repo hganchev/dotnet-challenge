@@ -14,5 +14,7 @@ QueryVsMethodSyntaxExample.Run();
 StreamingOperatorsExample.Run();
 MaterialisingOperatorsExample.Run();
 AggregatorsExample.Run();
+SetAndJoinOperatorsExample.Run();
+CustomComparerExample.Run();
 
 Console.WriteLine("\n=== Completed ===");

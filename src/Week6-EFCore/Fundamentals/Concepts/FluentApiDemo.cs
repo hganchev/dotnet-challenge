@@ -23,7 +23,7 @@ public static class FluentApiDemo
         var priceProperty = bookType.FindProperty(nameof(Entities.Book.Price))!;
         Console.WriteLine($"  Price -> column type={priceProperty.GetColumnType()}");
 
-        var fk = bookType.GetForeignKeys().Single();
+        var fk = bookType.GetForeignKeys().Single(f => f.PrincipalEntityType.ClrType == typeof(Entities.Author));
         Console.WriteLine($"  Author relationship -> DeleteBehavior={fk.DeleteBehavior}");
 
         Console.WriteLine();

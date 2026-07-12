@@ -22,8 +22,11 @@ applyTo: "src/Week5-AspNetCore/**"
 - Group related endpoints with `app.MapGroup("/prefix")` and attach shared filters/metadata there.
 - Use `TypedResults` (e.g., `Results.Ok<T>`, `Results.NotFound()`) for accurate OpenAPI response type inference.
 - Validate inputs with `IValidateOptions<T>` or a dedicated validator; do not trust raw user input.
+- Validate request DTOs with data annotations or FluentValidation and return `Results.ValidationProblem()` on failure — never let unvalidated input reach business logic.
 - Return `IResult` from handler lambdas; use record types for request/response DTOs.
 - Annotate endpoints with `.WithName()`, `.WithTags()`, and `.WithOpenApi()` for discoverable API docs.
+- Configure CORS with a named, restrictive policy (specific origins/methods/headers) — never combine `AllowAnyOrigin()` with credentials.
+- Layer configuration sources deliberately (`appsettings.json` → `appsettings.{Environment}.json` → environment variables → user secrets/Key Vault) and know that later sources override earlier ones.
 
 ## Authentication & Authorization
 - Validate JWT tokens in middleware (`AddJwtBearer`), not inside individual endpoint handlers.

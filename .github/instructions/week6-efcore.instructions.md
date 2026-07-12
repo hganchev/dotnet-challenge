@@ -9,6 +9,9 @@ applyTo: "src/Week6-EFCore/**"
 - Always name migrations meaningfully (e.g., `AddOrderStatusColumn`) — avoid auto-generated names in long-lived projects.
 - Apply migrations at startup with `dbContext.Database.MigrateAsync()` in integration/dev environments; use scripts in production.
 - Configure `DbContext` lifetime as **Scoped** (one per HTTP request) when used in ASP.NET Core.
+- Seed static/reference data via `HasData` in `OnModelCreating`, not ad-hoc runtime inserts.
+- Wrap multi-step operations spanning more than one `SaveChangesAsync()` call in an explicit transaction (`BeginTransactionAsync`).
+- Use a concurrency token (`[Timestamp]`/`RowVersion`, or `IsConcurrencyToken()`) to detect optimistic concurrency conflicts on updates.
 
 ## Query Optimisation
 - Use `AsNoTracking()` for read-only queries — eliminates change-tracker overhead and reduces memory usage.

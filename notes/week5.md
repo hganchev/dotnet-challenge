@@ -131,6 +131,7 @@ Understand the core building blocks of an ASP.NET Core web application: how requ
 | Short-circuiting | ✅ | `Middleware/Middlewares/MaintenanceModeMiddleware.cs` |
 | Exception handler | ✅ | `Middleware/Program.cs` (`UseExceptionHandler`) |
 | `Use` vs `Run` vs `Map` | ✅ | `Middleware/Program.cs` (`/branch` route) |
+| Named, restrictive CORS policy | ✅ | `Middleware/Program.cs` (`AddCors`/`UseCors("TrustedClientPolicy")`) |
 
 ### Dependency Injection
 | Topic | Covered? | File |

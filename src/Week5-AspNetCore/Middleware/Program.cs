@@ -5,6 +5,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+// Named, restrictive CORS policy — specific origin/methods/headers only.
+// Never combine AllowAnyOrigin() with AllowCredentials(): browsers reject that
+// combination, and it would defeat the purpose of an origin allow-list anyway.
+const string TrustedClientPolicy = "TrustedClientPolicy";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(TrustedClientPolicy, policy =>
+    {
+        policy.WithOrigins("https://trusted-client.example.com")
+              .WithMethods("GET", "POST")
+              .WithHeaders("Content-Type", "Authorization");
+    });
+});
+
 var app = builder.Build();
 
 // ─── Middleware pipeline — registration order matters ───────────────────────
@@ -29,6 +43,11 @@ app.UseExceptionHandler(errorApp =>
 
 // 2) HTTPS redirection.
 app.UseHttpsRedirection();
+
+// 2b) CORS — after routing-adjacent concerns, before auth/endpoints, so the
+//     policy is evaluated for every request but still runs ahead of anything
+//     that decides whether the request is authorized.
+app.UseCors(TrustedClientPolicy);
 
 // 3) Short-circuiting example — must run before routing so it can abort the
 //    request early, before any endpoint code executes.
@@ -90,6 +109,7 @@ Console.WriteLine("""
   ║  GET  /throw               → exception handler middleware        ║
   ║  GET  /branch               → Map + Run terminal branch          ║
   ║  Header "X-Maintenance: true" on any request → 503 short-circuit ║
+  ║  CORS: only https://trusted-client.example.com (GET/POST) allowed ║
   ╚══════════════════════════════════════════════════════════════════╝
 """);
 

@@ -8,6 +8,8 @@ applyTo: "src/Week2-MemoryAndRuntime/**"
 - Use `GC.KeepAlive()` only when demonstrating lifetime behaviour in demos — not as a pattern.
 - Large objects (≥ 85 KB) go to the Large Object Heap (LOH); prefer reusing large buffers via `ArrayPool<T>`.
 - Avoid finalizers unless wrapping truly unmanaged resources; use `SafeHandle` instead.
+- Understand generational GC (Gen0/1/2): most objects die young in Gen0; avoid unnecessarily promoting short-lived objects to Gen2 by holding long-lived references to temporary data.
+- Use `WeakReference<T>` only for caches/observers where the reference must not artificially extend the target's lifetime.
 
 ## IDisposable Pattern
 - Implement `IDisposable` on any type that owns an unmanaged resource or an `IDisposable` field.
@@ -16,6 +18,7 @@ applyTo: "src/Week2-MemoryAndRuntime/**"
 - Always use `using` statements / `using` declarations — never call `.Dispose()` manually.
 - Suppress finalizer registration in `Dispose`: `GC.SuppressFinalize(this)`.
 - Throw `ObjectDisposedException` from public methods when called after disposal.
+- Implement `IAsyncDisposable`/`DisposeAsync` alongside `IDisposable` when cleanup involves async I/O (e.g. flushing a network stream); consume it with `await using`.
 
 ## Span\<T\> and Memory\<T\>
 - Use `Span<T>` for synchronous, stack-confined slice operations to avoid heap allocations.

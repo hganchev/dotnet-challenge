@@ -17,6 +17,16 @@ applyTo: "src/Week1-CSharpFundamentals/**"
 - Use `record` / `record struct` for DTOs and value objects that need structural equality.
 - Keep constructors simple — do not perform heavy work or I/O in constructors.
 - Prefer `init`-only setters over settable properties to communicate post-construction immutability.
+- Default to `private` access and widen (`internal` → `public`) only when a member is part of the intended contract.
+- Use `static` members only for stateless helpers or true singletons; avoid static mutable state (see `StaticMembers`).
+- Overload operators (`==`, `+`, etc.) only on value-like types where the operation has an unambiguous meaning, and always pair `==`/`!=` with `Equals`/`GetHashCode` overrides.
+
+## Exceptions
+- Catch only exception types you can meaningfully handle; never catch bare `Exception` except at a top-level/global boundary.
+- Derive custom exceptions from `Exception` (not `ApplicationException`) and add context via constructor parameters/properties, not string parsing.
+- Rethrow with `throw;` (never `throw ex;`) to preserve the original stack trace.
+- Use exception filters (`catch (IOException ex) when (...)`) to inspect an exception without a catch-then-rethrow.
+- Reserve exceptions for exceptional conditions — do not use them for normal/expected control flow (e.g. validation failures).
 
 ## Delegates & Events
 - Prefer `Func<>` / `Action<>` over custom `delegate` declarations unless a named type improves clarity.

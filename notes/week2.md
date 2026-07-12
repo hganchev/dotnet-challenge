@@ -98,6 +98,7 @@ ClrInternals/
 - `ArrayPool<T>.Shared` reuses large buffers instead of repeated LOH allocations
 - `GC.GetGeneration(obj)` reveals which generation an object currently resides in
 - `GC.GetTotalMemory(forceFullCollection)` reports approximate managed heap size
+- `WeakReference<T>` lets a cache/observer reference an object without keeping it alive — see `GarbageCollector/Examples/WeakReferenceDemo.cs`. Gotcha found while implementing it: calling `TryGetTarget(out var target)` yields a **strong** local reference; if that local stays in scope across a later `GC.Collect()`, it defeats the demo. Isolate the check in its own method so the strong reference dies when that method returns.
 
 ### IDisposable Pattern
 - **Simple pattern** (sealed class): implement `IDisposable.Dispose()` directly
@@ -106,6 +107,7 @@ ClrInternals/
 - `GC.SuppressFinalize(this)` in `Dispose()` prevents unnecessary finalization
 - `SafeHandle` is preferred over raw `IntPtr` for wrapping unmanaged handles
 - Throw `ObjectDisposedException` from public methods after disposal
+- Implement `IAsyncDisposable`/`DisposeAsync` alongside `IDisposable` when cleanup involves async I/O; consume with `await using` — see `IDisposablePattern/Disposables/AsyncResourceHolder.cs` and `Examples/AsyncDisposableDemo.cs`.
 
 ### Span and Memory
 - `Span<T>` is a stack-only ref struct — cannot be stored in fields or used across `await`

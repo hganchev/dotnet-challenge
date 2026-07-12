@@ -16,3 +16,6 @@ SafeHandleDemo.Run();
 
 // --- ObjectDisposedException: guarding public API after disposal ---
 ObjectDisposedDemo.Run();
+
+// --- IAsyncDisposable: async cleanup via await using ---
+await AsyncDisposableDemo.RunAsync();

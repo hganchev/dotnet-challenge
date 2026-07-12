@@ -172,6 +172,9 @@ QueryOptimization/
 | Data annotations | ✅ | `Fundamentals/Concepts/DataAnnotationsDemo.cs`, `Fundamentals/Entities/Author.cs` |
 | Fluent API | ✅ | `Fundamentals/Concepts/FluentApiDemo.cs`, `Fundamentals/Data/AppDbContext.cs` |
 | Migrations | ✅ | `Fundamentals/Concepts/MigrationsDemo.cs`, `Fundamentals/Migrations/` |
+| Seeded lookup data (`HasData`) | ✅ | `Fundamentals/Entities/Genre.cs`, `AppDbContext.OnModelCreating` |
+| Explicit transaction across multiple `SaveChangesAsync()` | ✅ | `Fundamentals/Concepts/ConcurrencyAndTransactionsDemo.cs` |
+| Optimistic concurrency token (SQLite: manually-incremented `Version`, not a DB-generated rowversion) | ✅ | `Fundamentals/Entities/Book.cs`, `Fundamentals/Concepts/ConcurrencyAndTransactionsDemo.cs` |
 
 ### Query Optimization
 | Topic | Covered? | File |

@@ -46,6 +46,9 @@ namespace Fundamentals.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("GenreId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(8,2)");
 
@@ -54,11 +57,50 @@ namespace Fundamentals.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("TEXT");
 
+                    b.Property<uint>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
 
+                    b.HasIndex("GenreId");
+
                     b.ToTable("Books", (string)null);
+                });
+
+            modelBuilder.Entity("Fundamentals.Entities.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Non-Fiction"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Science Fiction"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Biography"
+                        });
                 });
 
             modelBuilder.Entity("Fundamentals.Entities.Book", b =>
@@ -69,7 +111,14 @@ namespace Fundamentals.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Fundamentals.Entities.Genre", "Genre")
+                        .WithMany()
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
                     b.Navigation("Author");
+
+                    b.Navigation("Genre");
                 });
 
             modelBuilder.Entity("Fundamentals.Entities.Author", b =>

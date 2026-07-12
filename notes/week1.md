@@ -143,6 +143,7 @@ Build a solid foundation in the core C# language concepts that underpin all .NET
 | Object initializers + `init`-only setters | ✅ | `Examples/InitializersDemo.cs` |
 | Collection initializers + collection expressions (C# 12) | ✅ | `Examples/InitializersDemo.cs` |
 | Target-typed `new` | ✅ | `Examples/InitializersDemo.cs` |
+| Custom exceptions, `throw;` vs `throw ex;`, exception filters (`when`) | ✅ | `Exceptions/OrderExceptions.cs`, `Examples/ExceptionsDemo.cs` |
 
 ### Gaps to Address
 All gaps resolved. OOP topic is fully covered.

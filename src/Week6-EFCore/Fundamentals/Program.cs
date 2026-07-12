@@ -14,4 +14,5 @@ await MigrationsDemo.RunAsync(context);
 ConventionsDemo.Run(context);
 DataAnnotationsDemo.Run(context);
 FluentApiDemo.Run(context);
+await ConcurrencyAndTransactionsDemo.RunAsync(context);
 

@@ -23,3 +23,6 @@ OperatorOverloadingDemo.Run();
 // --- Object & Collection Initializers ---
 InitializersDemo.Run();
 
+// --- Exceptions: specific catches, custom exceptions, filters, rethrow ---
+ExceptionsDemo.Run();
+
