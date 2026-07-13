@@ -1,7 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using ObservabilityAndTracing.Examples;
 
-// TODO: Implement Observability & Tracing demo.
-// Cover: structured logging with Serilog (correlation ID propagated across an
-// async call chain), OpenTelemetry tracing across at least one async boundary,
-// and liveness/readiness health checks via IHealthCheck.
-Console.WriteLine("Hello, World!");
+await StructuredLoggingDemo.RunAsync();
+Console.WriteLine();
+await DistributedTracingDemo.RunAsync();
+Console.WriteLine();
+await HealthChecksDemo.RunAsync();

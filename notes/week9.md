@@ -81,32 +81,33 @@ Learn how to reason about the foundational building blocks of large-scale distri
 ### Scalability & Caching
 | Topic | Covered? | File |
 |---|---|---|
-| Load balancing simulation | ⬜ | `ScalabilityAndCaching/` – not yet implemented |
-| In-process caching (`IMemoryCache`) | ⬜ | `ScalabilityAndCaching/` – not yet implemented |
-| Distributed caching | ⬜ | `ScalabilityAndCaching/` – not yet implemented |
-| Cache invalidation / stampede prevention | ⬜ | `ScalabilityAndCaching/` – not yet implemented |
+| Load balancing simulation (round-robin, least-connections) | ✅ | `ScalabilityAndCaching/LoadBalancing/`, `Examples/LoadBalancingDemo.cs` |
+| In-process caching (`IMemoryCache`) | ✅ | `ScalabilityAndCaching/Caching/CacheAsideProductService.cs` |
+| Distributed caching (`IDistributedCache`) | ✅ | `ScalabilityAndCaching/Caching/DistributedCacheProductService.cs` |
+| Cache invalidation / stampede prevention | ✅ | `ScalabilityAndCaching/Caching/StampedePreventionCacheService.cs` |
 
 ### Messaging & Event-Driven Architecture
 | Topic | Covered? | File |
 |---|---|---|
-| Pub/Sub demo | ⬜ | `MessagingAndEventDrivenArchitecture/` – not yet implemented |
-| Outbox pattern | ⬜ | `MessagingAndEventDrivenArchitecture/` – not yet implemented |
-| Event sourcing basics | ⬜ | `MessagingAndEventDrivenArchitecture/` – not yet implemented |
+| Pub/Sub demo | ✅ | `MessagingAndEventDrivenArchitecture/PubSub/`, `Examples/PubSubDemo.cs` |
+| Outbox pattern | ✅ | `MessagingAndEventDrivenArchitecture/Outbox/`, `Examples/OutboxDemo.cs` |
+| Event sourcing basics | ✅ | `MessagingAndEventDrivenArchitecture/EventSourcing/`, `Examples/EventSourcingDemo.cs` |
+| Delivery guarantees / idempotent consumer | ✅ | `MessagingAndEventDrivenArchitecture/DeliveryGuarantees/`, `Examples/DeliveryGuaranteesDemo.cs` |
 
 ### Resilience & Rate Limiting
 | Topic | Covered? | File |
 |---|---|---|
-| Polly retry/circuit-breaker/timeout | ⬜ | `ResilienceAndRateLimiting/` – not yet implemented |
-| Rate limiter (token bucket / sliding window) | ⬜ | `ResilienceAndRateLimiting/` – not yet implemented |
-| Idempotency keys | ⬜ | `ResilienceAndRateLimiting/` – not yet implemented |
+| Polly retry/circuit-breaker/timeout | ✅ | `ResilienceAndRateLimiting/Resilience/ResiliencePolicies.cs`, `Examples/PollyResilienceDemo.cs` |
+| Rate limiter (token bucket / sliding window) | ✅ | `ResilienceAndRateLimiting/RateLimiting/`, `Examples/RateLimitingDemo.cs` |
+| Idempotency keys | ✅ | `ResilienceAndRateLimiting/Idempotency/`, `Examples/IdempotencyDemo.cs` |
 
 ### Observability & Tracing
 | Topic | Covered? | File |
 |---|---|---|
-| Structured logging + correlation IDs | ⬜ | `ObservabilityAndTracing/` – not yet implemented |
-| OpenTelemetry tracing | ⬜ | `ObservabilityAndTracing/` – not yet implemented |
-| Health checks | ⬜ | `ObservabilityAndTracing/` – not yet implemented |
+| Structured logging + correlation IDs | ✅ | `ObservabilityAndTracing/Logging/OrderRequestFlow.cs`, `Examples/StructuredLoggingDemo.cs` |
+| OpenTelemetry tracing | ✅ | `ObservabilityAndTracing/Tracing/`, `Examples/DistributedTracingDemo.cs` |
+| Health checks (liveness vs readiness) | ✅ | `ObservabilityAndTracing/HealthChecks/`, `Examples/HealthChecksDemo.cs` |
 
 ### Gaps to Address
-- Implement `ScalabilityAndCaching`, `MessagingAndEventDrivenArchitecture`, `ResilienceAndRateLimiting`, `ObservabilityAndTracing`
+- None — all four Week 9 projects are fully implemented and smoke-tested (`dotnet build DotNetChallenge.sln`: 0 warnings/errors).
 - See [week10.md](week10.md) for advanced/distributed-data topics, the API gateway/database/security/real-time projects, and the capstone
