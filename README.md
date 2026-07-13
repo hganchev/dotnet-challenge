@@ -77,4 +77,4 @@ dotnet run --project src/Week8-TestingAndPerformance/Benchmarks -c Release
 
 ## Prerequisites
 
-- [.NET 9 SDK](https://dotnet.microsoft.com/download)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download)

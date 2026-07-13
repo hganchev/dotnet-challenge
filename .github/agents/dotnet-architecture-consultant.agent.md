@@ -10,11 +10,11 @@ description: >
   "what architecture should I use", or asks for an ADR / architecture recommendation.
 tools:
   - vscode/askQuestions
-  - read_file
-  - grep_search
-  - file_search
-  - semantic_search
-  - create_file
+  - read/readFile
+  - search/codebase
+  - search/fileSearch
+  - search/textSearch
+  - edit/createFile
   - todo
 ---
 
